@@ -14,6 +14,12 @@ class KeyBoard {
     this.KeyBoard = document.createElement("div");
     this.classes = classes;
     this.tab = tab;
+	this.message=document.createElement("div");
+  }
+  createMessage(){
+	  this.message.innerHTML="Для выбора языка нажмите клавишу 'Lang' или используйте сочетание клавиш 'Shift+Alt'";
+	  this.message.classList.add("message");
+	  document.body.appendChild(this.message);
   }
   addClasses() {
     this.KeyBoard.classList.add(...this.classes);
@@ -83,6 +89,7 @@ keyBoard.render();
 keyBoard.keyIlluminator(document.querySelectorAll(".key"));
 keyEvent();
 mouseEvent();
+keyBoard.createMessage();
 // document.onkeydown = function (e) {
 //   return false;
 // };
