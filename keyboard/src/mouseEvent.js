@@ -48,17 +48,18 @@ export const mouseEvent = () => {
             );
           }
           if (e.target.getAttribute('data-key') === '46') {
-            textArea.setSelectionRange(
-              textArea.selectionStart - 1,
-              textArea.selectionStart - 1
-            );
-            textArea.value =
-              textArea.value.slice(0, textArea.selectionStart) +
-              textArea.value.slice(textArea.selectionStart + 1);
-          }
+			  let pos=textArea.selectionStart
+			textArea.setRangeText('', pos,pos+1,'select');
+			// // textArea.selectionStart=textArea.selectionStart-2
+            // textArea.value =
+            //   textArea.value.slice(0, textArea.selectionStart) +
+            //   textArea.value.slice(textArea.selectionStart + 1);
+			}
         }
-      }
-    });
+	}
+	});
+	console.log(textArea.selectionStart);
+	console.log(textArea.selectionEnd);
   });
   window.addEventListener('mouseup', function (e) {
     let textArea = document.querySelector(".monitor");
