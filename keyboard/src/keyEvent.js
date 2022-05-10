@@ -68,30 +68,6 @@ export const keyEvent = () => {
               }
             });
           }
-          // if (e.keyCode === 20 && caps === false) {
-          //   caps = !caps;
-          //   let items = document.querySelectorAll('.key');
-          //   items.forEach((item) => {
-          //     if (item.getAttribute('data-isFunc') === 'false') {
-          //       let r = item.firstChild.textContent;
-          //       r = item.firstChild.textContent.toLowerCase();
-          //       item.firstChild.textContent = r;
-          //     }
-          //     })
-          //     console.log(111);
-          //   }
-          // if (e.keyCode === 20 && caps === true) {
-          //   caps = !caps;
-          //   let items = document.querySelectorAll('.key');
-          //   items.forEach((item) => {
-          //     if (item.getAttribute('data-isFunc') === 'false') {
-          //       let r = item.firstChild.textContent;
-          //       r = item.firstChild.textContent.toUpperCase();
-          //       item.firstChild.textContent = r;
-          //     }
-          //   });
-          //   console.log(222);
-          // }
         }
       }
     });
