@@ -1,10 +1,8 @@
 export const mouseEvent = () => {
   let capsLock = false;
   window.addEventListener('mousedown', function (e) {
-    // e.stopPropagation();
     let keys = document.querySelectorAll('[data-key]');
     let textArea = document.querySelector('.monitor');
-    // textArea.focus();
     let str = '';
     keys.forEach((key) => {
       if (e.target.getAttribute('data-key') === key.getAttribute('data-key')) {
@@ -58,7 +56,6 @@ export const mouseEvent = () => {
               textArea.value.slice(0, textArea.selectionStart) +
               textArea.value.slice(textArea.selectionStart + 1);
           }
-          // console.log(textArea.value.slice(0,textArea.selectionStart));
         }
       }
     });
@@ -87,20 +84,17 @@ export const mouseEvent = () => {
           key.lastChild.classList.remove('tr');
         } else {
           key.lastChild.classList.remove('tc');
-          key.lastChild.classList.add('tr');
-          // key.firstChild.textContent=key.firstChild.textContent.toLowerCase();
+          key.lastChild.classList.add('tr');;
         }
       }
     });
     if (capsLock) {
       document.querySelectorAll('[data-isFunc=false]').forEach((key) => {
         key.firstChild.textContent = key.firstChild.textContent.toUpperCase();
-        // console.log(key.firstChild.textContent);
       });
     } else {
       document.querySelectorAll('[data-isFunc=false]').forEach((key) => {
         key.firstChild.textContent = key.firstChild.textContent.toLowerCase();
-        // console.log(key.firstChild.textContent);
       });
     }
   });

@@ -5,8 +5,6 @@ export const keyEvent = () => {
     let keys = document.querySelectorAll(`[data-key]`);
     let str = '';
     textArea.focus();
-
-    // console.log(position);
     keys.forEach((key) => {
       if (key.getAttribute('data-key') === e.keyCode.toString()) {
         key.classList.add('key-active');

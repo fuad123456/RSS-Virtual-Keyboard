@@ -1,11 +1,11 @@
-import { createKey } from "./src/createKey.js"; // \n
+import { createKey } from "./src/createKey.js";
 
 import { dataEn, dataRu } from "./src/data.js";
 
 import { keyEvent } from "./src/keyEvent.js";
-import { createMonitor } from "./src/createMonitor.js"; // Создание монитора
+import { createMonitor } from "./src/createMonitor.js";
 import { mouseEvent } from "./src/mouseEvent.js";
-// import { mouseEvent } from './src/mouseEvent';
+
 
 let tab = false;
 
@@ -68,7 +68,6 @@ class KeyBoard {
     keys.forEach((key) => {
       key.addEventListener('mousedown', function (e) {
         key.classList.add('key-active');
-        // console.log(e);
       });
       key.addEventListener('mouseup', function (e) {
         e.target.classList.remove('key-active');
@@ -90,9 +89,6 @@ keyBoard.keyIlluminator(document.querySelectorAll(".key"));
 keyEvent();
 mouseEvent();
 keyBoard.createMessage();
-// document.onkeydown = function (e) {
-//   return false;
-// };
 
 window.addEventListener('keydown', function (e) {
   if (e.altKey && e.shiftKey) {
@@ -117,7 +113,6 @@ window.addEventListener('keydown', function (e) {
           if (key.getAttribute('data-isFunc') === 'false') {
             dataEn.forEach((el) => {
               if (el.code === key.getAttribute('data-key')) {
-                // console.log(el.lit);
                 return (key.firstChild.textContent = el.lit);
               }
             });
@@ -161,5 +156,5 @@ window.addEventListener('load', function (e) {
   }
   // }
 });
-// localStorage.clear();
+
 console.log(localStorage.getItem('lang'));
